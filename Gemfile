@@ -11,9 +11,11 @@ gemspec
   end
 end
 
-gem "cucumber", "~> 1.1.9"
-gem "aruba",    "~> 0.5"
-gem "rake",     "~> 10.0.0"
-gem "activesupport", ">= 3.0"
+gem 'cucumber', '~> 1.1.9'
+gem 'aruba', '~> 0.5'
+gem 'rake', '~> 10.0.0'
+
+# for optional rails support
+gem 'activesupport', RUBY_VERSION < "1.9.3" ? '~> 3.0' : '>= 3.0'
 
 eval File.read('Gemfile-custom') if File.exist?('Gemfile-custom')
